@@ -4,7 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const webpack = require('webpack')
 var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
 module.exports = {
-   mode:'development',
+   mode:'production',
     entry: {
       app:['./src/index.js',hotMiddlewareScript],
       // print:'./src/print.js'
