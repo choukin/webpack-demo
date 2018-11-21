@@ -1,6 +1,10 @@
 import _ from 'lodash'
 import './style.css'
 import {cube} from './math.js'
+
+if (process.env.NODE_ENV !== 'production') {
+    console.log('looks like we are in Development Mode')
+}
 function component() { 
     var element = document.createElement('pre')
     var btn = document.createElement('button')
