@@ -1,31 +1,40 @@
-import _ from 'lodash'
 import './style.css'
 import {cube} from './math.js'
+import _ from 'lodash'
+// import Print from './print'
 
-if (process.env.NODE_ENV !== 'production') {
-    console.log('looks like we are in Development Mode')
+ 
+// async function getcomponent() { 
+    function getcomponent() {
+    // return import(/* webpackChunkName: "loadsh.[Hash]" */ 'lodash').then(_=>{
+    //     var element =  document.createElement('div')
+    //     var _ = _.default
+
+    //     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+
+    //     return element
+    // }).catch(error => 'An error occurred while loading the component')
+    var element =  document.createElement('div')
+    // const _ = await import(/* webpackChunkName: "lodash" */ 'lodash');
+    let button = document.createElement('button')
+    let br = document.createElement('br')
+
+        button.innerHTML = 'Click me and look at the console'
+        element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+        element.appendChild(br)
+        element.appendChild(button)
+
+        // button.onclick = Print.bind(null, 'Hello webpack')
+        // button.onclick = e => import(/* webpackChunkName: "print" */ './print').then(module => {
+        //     let print = module.default
+        //     print()
+        // })
+
+        return element
+
 }
-function component() { 
-    var element = document.createElement('pre')
-    var btn = document.createElement('button')
-    // element.innerHTML = _.join(['Hello', 'webpack'], ' ');
 
-    // btn.innerHTML = 'click me and check the console!'
-    // btn.onclick = printMe
-
-    // element.appendChild(btn)
-    element.innerHTML = [
-        'hello webpack',
-        'S cubed is equal to ' + cube(5)
-    ]
-    return element
-}
-
-document.body.appendChild(component())
-
-// if (module.hot) {
-//     module.hot.accept('./print.js', function(){
-//         console.log('Accepting the updated printMe module!')
-//         printMe()
-//     })
-// }
+//  getcomponent().then(component => {
+//      document.body.appendChild(component)
+//  })
+document.body.appendChild(getcomponent())
